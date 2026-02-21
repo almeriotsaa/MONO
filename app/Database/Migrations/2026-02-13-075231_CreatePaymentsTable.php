@@ -13,7 +13,7 @@ class CreatePaymentsTable extends Migration
                 'type' => 'INT',
                 'constraint' => 11,
                 'unsigned' => true,
-                'auto_increment' => true,
+                
             ],
             'order_id' => [
                 'type' => 'INT',

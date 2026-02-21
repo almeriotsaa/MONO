@@ -9,7 +9,7 @@ $routes->get('/', 'Home::index');
 
 //Collection Product
 $routes->get('/collection', 'ProductController::index');
-$routes->get('/detail', 'ProductController::index');
+$routes->get('/detail', 'ProductController::detail');
 
 //Admin
 $routes->get('/master/login', 'AdminController::index');

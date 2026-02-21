@@ -8,8 +8,11 @@ class PaymentsSeeder extends Seeder
 {
     public function run()
     {
+        $order = $this->db->table('orders')->get()->getRow();
+
         $data = [
-            'order_id' => 1,
+            'payment_id'=> 4001,
+            'order_id' => $order->order_id,
             'method'   => 'Transfer Bank',
             'amount'   => '1500000',
             'status'   => 'Waiting Confirmation'

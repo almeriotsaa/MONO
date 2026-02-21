@@ -8,8 +8,11 @@ class PaymentDetailsSeeder extends Seeder
 {
     public function run()
     {
+        $payment = $this->db->table('payments')->get()->getRow();
+
         $data = [
-            'payment_id'     => 1,
+            'detail_id' => 3001,
+            'payment_id'     => $payment->payment_id,
             'provider'       => 'BCA',
             'account_number' => '1234567890',
             'status_message' => 'Payment Successful'

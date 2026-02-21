@@ -13,7 +13,7 @@ class CreateOrdersTable extends Migration
                 'type' => 'INT',
                 'constraint' => 11,
                 'unsigned' => true,
-                'auto_increment' => true,
+                
             ],
             'user_id' => [
                 'type' => 'INT',

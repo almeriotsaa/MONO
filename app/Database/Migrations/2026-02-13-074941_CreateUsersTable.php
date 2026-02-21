@@ -13,7 +13,7 @@ class CreateUsersTable extends Migration
                 'type' => 'INT',
                 'constraint' => 11,
                 'unsigned' => true,
-                'auto_increment' => true,
+
             ],
             'name' => [
                 'type' => 'VARCHAR',

@@ -8,10 +8,11 @@ class ProductsSeeder extends Seeder
 {
    public function run()
     {
-        // ambil category pertama
+        
         $category = $this->db->table('categories')->get()->getRow();
 
         $data = [
+            'product_id' => 2001,
             'category_id' => $category->category_id,
             'image'       => 'nike.jpg',
             'name_product'=> 'Nike Air Max',

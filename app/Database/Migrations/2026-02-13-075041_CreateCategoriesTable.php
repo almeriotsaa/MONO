@@ -13,7 +13,7 @@ class CreateCategoriesTable extends Migration
                 'type' => 'INT',
                 'constraint' => 11,
                 'unsigned' => true,
-                'auto_increment' => true,
+  
             ],
             'category_gender' => [
                 'type' => 'VARCHAR',

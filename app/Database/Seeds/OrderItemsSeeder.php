@@ -12,6 +12,7 @@ class OrderItemsSeeder extends Seeder
         $product = $this->db->table('products')->get()->getRow();
 
         $data = [
+            'order_item_id' => 5001,
             'order_id'   => $order->order_id,
             'product_id' => $product->product_id,
             'quantity'   => 1,

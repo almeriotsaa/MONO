@@ -9,14 +9,12 @@ class ProductController extends BaseController
 {
     public function index()
     {
-        return view('collection/detail');
+        return view('collection/collection'); 
     }
 
-    // public function detail($id)
-    // {
-    //     $model = new ArticleModel();
-    //     $data['article'] = $model->find($id);
-
-    //     return view('articles/detail', $data);
-    // }
+    public function detail()
+    {
+        return view('collection/detail'); 
+    }
 }
+
