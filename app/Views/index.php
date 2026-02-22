@@ -42,7 +42,7 @@
     <nav class="fixed top-0 w-full z-50 bg-white/95 border-thin-b">
         <div class="max-w-[1800px] mx-auto px-12 h-16 flex items-center justify-between">
             <div class="flex items-center space-x-12">
-                <a class="nav-link" href="#">Shop</a>
+                <a class="nav-link" href="<?= base_url('collection') ?>">Shop</a>
                 <a class="nav-link" href="#">Archive</a>
             </div>
             <div class="text-sm font-serif-luxury tracking-[0.3em] uppercase">MONO</div>
@@ -52,6 +52,8 @@
             </div>
         </div>
     </nav>
+
+    <!-- Hero Section -->
     <section class="h-screen w-full pt-16 px-12 pb-12">
         <div class="relative w-full h-full border-thin overflow-hidden group">
             <img alt="Editorial monochrome" class="w-full h-full object-cover grayscale brightness-90 transition-transform duration-[2000ms] group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPdtQ4PiWMKeD8ewAg5ITYR43qe0aQmZYcEBUi5STh1LELWIG6GCrDPxF45dmKoG1ZE9_Zfaj42mCI8EOlzphJyOK33Tjyf4A6TOdFyfCIJmQdgLxBnU-A63P3ba5aoElP17NlS0OBuePWKloqislccYKAgHUbhz2NinFnkAUaJrciZPNQnpGbduHB2E16jC_q_pkIQklcs7FOsbk4rhriIYPGFf0krg0SoX1hw1sFZeEqroQ-PYMS6eHKB5sTWaMRmPNfYQQvwoE" />
@@ -60,11 +62,13 @@
                     <span class="font-serif-luxury text-2xl tracking-[0.8em] opacity-80">MONO</span>
                 </div>
                 <div class="mt-8">
-                    <a class="text-[9px] uppercase tracking-[0.6em] font-light hover:underline underline-offset-8" href="#">Enter</a>
+                    <a class="text-[9px] uppercase tracking-[0.6em] font-light hover:underline underline-offset-8" href="<?= base_url('collection') ?>">Enter</a>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Tagline Section -->
     <section class="py-64 bg-white">
         <div class="max-w-[1200px] mx-auto px-12 text-center">
             <h1 class="font-serif-luxury text-5xl md:text-6xl italic leading-tight mb-16">The reduction to essentials.</h1>
@@ -73,52 +77,37 @@
             </p>
         </div>
     </section>
+
+    <!-- New Arrivals Section -->
     <section class="px-12 pb-64">
         <div class="max-w-[1800px] mx-auto">
             <div class="flex justify-between items-baseline mb-24 border-thin-b pb-4">
                 <h2 class="font-serif-luxury text-4xl">New Arrivals</h2>
-                <span class="text-[9px] uppercase tracking-[0.4em]">01 — 04</span>
+                <span class="text-[9px] uppercase tracking-[0.4em]">01 — 0<?= count($newArrivals) ?></span>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-24">
-                <div class="group relative">
+                <?php foreach ($newArrivals as $item) : ?>
+                <a href="<?= base_url('detail/' . $item['product_id']) ?>" class="group relative">
                     <div class="aspect-[2/3] overflow-hidden bg-white border-thin">
-                        <img alt="Product" class="w-full h-full object-cover grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAojNBPNDPF7dusolYOQrfS-e60JnHH01DO78ImYP8m1mXOl--WlMlQvll0_Eq2rtcuPUbLfiWWNqEDh6SgrkN-V6r8MxDmllszf7uFcFukhE1UEkstTvy20VG-IpTbPR3IerZ9Yqd8zSIx_j--wCwgTfYvqdM127j42h59soNbB9a5Wl2Q3DuBCx30lmq-isloIl4rrWScHtoxZ4PLt3D0eHhO-KVBxKxC5EmcrsvQJTVnnQ5D40kc6rL5jTtsU9_mj9f0nVm4H6w" />
+                        <img 
+                            alt="<?= esc($item['name_product']) ?>" 
+                            class="w-full h-full object-cover grayscale" 
+                            src="<?= base_url('uploads/' . $item['image']) ?>" 
+                        />
                     </div>
                     <div class="product-info absolute inset-0 bg-white/90 flex flex-col items-center justify-center opacity-0 transition-opacity duration-500 pointer-events-none px-6 text-center">
-                        <h4 class="text-[10px] uppercase tracking-[0.4em] mb-4">Wool Blazer</h4>
-                        <p class="text-[10px] font-light tracking-widest text-black/60">450.00</p>
+                        <h4 class="text-[10px] uppercase tracking-[0.4em] mb-4"><?= esc($item['name_product']) ?></h4>
+                        <p class="text-[10px] font-light tracking-widest text-black/60">
+                            Rp <?= number_format($item['price'], 0, ',', '.') ?>
+                        </p>
                     </div>
-                </div>
-                <div class="group relative">
-                    <div class="aspect-[2/3] overflow-hidden bg-white border-thin">
-                        <img alt="Product" class="w-full h-full object-cover grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkzuBeF0zkgoBc_WbfvuQ5z0RiomL5HerMlEZnCFskPbGS-yGCfEfJ3RfffsqhD261c3c20AMnsldsh9UcVeof98IkFMAc9nZHxeYe2INamv4CKfetmrFMYIAOxKHGPvGUI-VYCDo-R84qYz1ZMzsrnWC6FzlAxjpsKei5nmuBGBqc5kz7-prBk5Pcm3wbM0NsfEHz-uEaSjWZhbSSU3P5-Jvkxy9o9R8YVx4tlEHxr5spnWd59JDdlMBwSqsnqyKYuOKJBrUJ_bU" />
-                    </div>
-                    <div class="product-info absolute inset-0 bg-white/90 flex flex-col items-center justify-center opacity-0 transition-opacity duration-500 pointer-events-none px-6 text-center">
-                        <h4 class="text-[10px] uppercase tracking-[0.4em] mb-4">Ribbed Knit</h4>
-                        <p class="text-[10px] font-light tracking-widest text-black/60">220.00</p>
-                    </div>
-                </div>
-                <div class="group relative">
-                    <div class="aspect-[2/3] overflow-hidden bg-white border-thin">
-                        <img alt="Product" class="w-full h-full object-cover grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXqeGW8VuUbmosIbR27suDvmQVHk8IIqKtKNUEUd80X78JpEWto1R4LXxOpdLNGyYKfDkUO5qeNqDbx_oilm-rzWXF-UHTK_NdsFjtW-zwbBBsdXj3idqYxxZIMHcYwrFS9ORZgJXz5wl3QARbQbj6hw-EiUVfspkPufwKn8ZF0U8JvsJYTdvv3AUOlO7KwBFpQWg_ZhVCwXx_4iUGm2UEMtF5DINJklJliSkCdtC_v6pXFU1d3f2B2FyUEoVX3s0FGdZpSqIm8d8" />
-                    </div>
-                    <div class="product-info absolute inset-0 bg-white/90 flex flex-col items-center justify-center opacity-0 transition-opacity duration-500 pointer-events-none px-6 text-center">
-                        <h4 class="text-[10px] uppercase tracking-[0.4em] mb-4">Leather Boot</h4>
-                        <p class="text-[10px] font-light tracking-widest text-black/60">680.00</p>
-                    </div>
-                </div>
-                <div class="group relative">
-                    <div class="aspect-[2/3] overflow-hidden bg-white border-thin">
-                        <img alt="Product" class="w-full h-full object-cover grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4jE2ZtEJvHM6daGDulhX77QD0cTay55GyOJcPtLgy1YDG1OReaLjRHqtIHtWS-VPfVbzXnqh4z0UYWbRHynHm8pWDEa18PNaAmEOyBiBE-lfTMcT3OVu-eqHryunGBa8j0kRkp1vEiiHaIdF1Gy0auQb5us2tG_L33tnXKF3xbBSs4bWZbtOKFIEaX736vwCpXNLAkmC0rNMg7VVzk8ybmZ8s3F154xqjiNucTx1X0dCM7c0IjzDVQ-YzKfgsz334LaPN-JzvwHo" />
-                    </div>
-                    <div class="product-info absolute inset-0 bg-white/90 flex flex-col items-center justify-center opacity-0 transition-opacity duration-500 pointer-events-none px-6 text-center">
-                        <h4 class="text-[10px] uppercase tracking-[0.4em] mb-4">Tailored Pant</h4>
-                        <p class="text-[10px] font-light tracking-widest text-black/60">310.00</p>
-                    </div>
-                </div>
+                </a>
+                <?php endforeach; ?>
             </div>
         </div>
     </section>
+
+    <!-- Editorial Section -->
     <section class="px-12 pb-64">
         <div class="max-w-[1800px] mx-auto grid grid-cols-12 items-center gap-12">
             <div class="col-span-12 lg:col-span-7">
@@ -131,10 +120,11 @@
                 <p class="text-[10px] uppercase tracking-[0.4em] font-light leading-loose text-black/60 mb-12">
                     A curated selection for the modern wardrobe. Functional, lasting, and devoid of noise.
                 </p>
-                <a class="text-[9px] uppercase tracking-[0.4em] border-thin px-8 py-3 hover:bg-black hover:text-white transition-colors" href="#">Discover</a>
+                <a class="text-[9px] uppercase tracking-[0.4em] border-thin px-8 py-3 hover:bg-black hover:text-white transition-colors" href="<?= base_url('collection') ?>">Discover</a>
             </div>
         </div>
     </section>
+
     <footer class="bg-white px-12 py-24 border-thin-t">
         <div class="max-w-[1800px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-24">
             <div class="space-y-4">
@@ -160,5 +150,5 @@
     </footer>
 
 </body>
-
 </html>
+

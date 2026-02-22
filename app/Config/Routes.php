@@ -5,11 +5,13 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Home::index');
+
+// $routes->get('/', 'Home::index');
 
 //Collection Product
+$routes->get('/', 'ProductController::home'); 
 $routes->get('/collection', 'ProductController::index');
-$routes->get('/detail', 'ProductController::detail');
+$routes->get('/detail/(:num)', 'ProductController::detail/$1');
 
 //Admin
 $routes->get('/master/login', 'AdminController::index');

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>MONO | Structured Wool Coat</title>
+    <title>MONO | <?= esc($product['name_product']) ?></title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&amp;family=Inter:wght@200;300;400&amp;display=swap" rel="stylesheet" />
     <script id="tailwind-config">
@@ -74,103 +74,116 @@
             </div>
         </div>
     </nav>
+
     <main class="max-w-[1800px] mx-auto px-8 pt-32 pb-20">
         <div class="flex flex-col lg:flex-row gap-0">
+
+            <!-- Kolom Gambar -->
             <div class="lg:w-[70%] space-y-12 pr-16">
                 <div class="aspect-[4/5] overflow-hidden bg-gray-50">
-                    <img alt="Structured Wool Coat Main View" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbslPUvX42dhkCggI10r8XscXug9cTPK6YegjF6ukXD5uC4FDwJKbI6EKuapbdsp-UXhlCKwvvDhe1Nr39Hs0Xs6cz97W40KuhlmCi2PmGCRvz8yjwI1lvA0c0aZANdWtFaIrU98A8mOoP5iC9x93oiQiz5jKV1HYByElLQoAK00gs9X_tlZEomer_D0K71VsYPyP9foa02HNvIadj6bWgvRjnu-QfyCLTEyfRDL-Y-F-GJxafDPDYi4RXqTYRQSgn8-jYaD_Wz3I" />
+                    <img 
+                        alt="<?= esc($product['name_product']) ?> Main View" 
+                        class="w-full h-full object-cover" 
+                        src="<?= base_url('uploads/' . $product['image']) ?>" 
+                    />
                 </div>
                 <div class="grid grid-cols-2 gap-12">
                     <div class="aspect-[4/5] bg-gray-50 overflow-hidden">
-                        <img alt="Thumbnail 1" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCR8jcdXUSwWc77Tsje9qYXhA30oXw0sb0Ad2VT7yJX3jiIRgPOl_BOFM40YzaRB1dzN9fHOSYKb9hB4orKQu_346ldJzbGt0FkGH-zv-muYfEBBfLLYDd9I_I4NkLQAQebpX5tbtLNwX09mbsc5ZeF8Qn_BpkEcKuZPO_lwbFbMJSzp-2d8UCGYUlAPaclnjc2vUL2ji0Zrr9bjNWngFmI6sySNtCSupUDHmS7RNlM9d5_2z20EMPX77zFqJfrgRqWME0mU0PRVy4" />
+                        <img 
+                            alt="Thumbnail 1" 
+                            class="w-full h-full object-cover" 
+                            src="<?= base_url('uploads/' . $product['image']) ?>" 
+                        />
                     </div>
                     <div class="aspect-[4/5] bg-gray-50 overflow-hidden">
-                        <img alt="Thumbnail 2" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDp4wvYchqyM-_ZxykphweKBtPSMVcTqxv3qYqxTLNRRe6DD1IUucI1f5HtIsHDsQWanqwrkommj1HR6S8NvMS-ubxWvENuIUM0fpoHoRZtEDHtL4BQucb8rd0LgTr3pvksnDTlbR3qZbj5fB4K0MvnE_DWnETJS1_nCQOPLMbB9xRw_D8PKk6tuP2gqJNEk3X4IZXTBrR_wf5FfrgRW2lM9GOVCxCNutiWPjhln9MwjcYTDaBm5CfaGbV965wGBX9kMF-d2pT8DmA" />
+                        <img 
+                            alt="Thumbnail 2" 
+                            class="w-full h-full object-cover" 
+                            src="<?= base_url('uploads/' . $product['image']) ?>" 
+                        />
                     </div>
                 </div>
             </div>
+
+            <!-- Kolom Detail Produk -->
             <div class="lg:w-[30%]">
                 <div class="sticky-details space-y-16">
                     <header class="space-y-6">
-                        <h1 class="text-4xl font-serif font-light leading-tight tracking-tight">Structured Wool Coat</h1>
-                        <p class="text-xl font-serif italic text-black/80">$850.00</p>
+                        <h1 class="text-4xl font-serif font-light leading-tight tracking-tight">
+                            <?= esc($product['name_product']) ?>
+                        </h1>
+                        <p class="text-xl font-serif italic text-black/80">
+                            Rp <?= number_format($product['price'], 0, ',', '.') ?>
+                        </p>
                     </header>
+
                     <div class="space-y-12">
+                        <!-- Size Selector -->
                         <div class="space-y-6">
                             <div class="flex justify-between items-baseline border-b border-black/10 pb-2">
                                 <span class="text-[10px] uppercase tracking-[0.3em] font-medium">Select Size</span>
                                 <button class="text-[9px] uppercase tracking-[0.3em] opacity-40 hover:opacity-100">Size Guide</button>
                             </div>
                             <div class="flex flex-wrap gap-x-8 gap-y-4">
-                                <button class="text-[10px] tracking-[0.3em] opacity-40 hover:opacity-100 transition-opacity">XS</button>
-                                <button class="text-[10px] tracking-[0.3em] opacity-40 hover:opacity-100 transition-opacity">S</button>
-                                <button class="text-[10px] tracking-[0.3em] font-bold border-b border-black">M</button>
-                                <button class="text-[10px] tracking-[0.3em] opacity-40 hover:opacity-100 transition-opacity">L</button>
-                                <button class="text-[10px] tracking-[0.3em] opacity-40 hover:opacity-100 transition-opacity">XL</button>
+                                <?php 
+                                // Pisahkan size berdasarkan koma jika ada beberapa size
+                                $sizes = explode(',', $product['size']);
+                                foreach ($sizes as $index => $size) :
+                                    $size = trim($size);
+                                ?>
+                                <button class="text-[10px] tracking-[0.3em] <?= $index === 0 ? 'font-bold border-b border-black' : 'opacity-40 hover:opacity-100 transition-opacity' ?>">
+                                    <?= esc($size) ?>
+                                </button>
+                                <?php endforeach; ?>
                             </div>
                         </div>
+
                         <button class="w-full py-5 border border-black text-[10px] uppercase tracking-[0.4em] hover:bg-black hover:text-white transition-all duration-500 bg-white text-black">
                             Add to Bag
                         </button>
+
+                        <!-- Description & Details -->
                         <div class="space-y-6 pt-8 border-t border-black/10">
                             <p class="text-[13px] leading-relaxed text-black/90 font-serif italic">
-                                A contemporary silhouette defined by sharp lines and architectural shoulders. Crafted from 100% responsibly sourced merino wool with a subtle grain texture.
+                                <?= esc($product['description']) ?>
                             </p>
                             <div class="space-y-4">
                                 <h2 class="text-[10px] uppercase tracking-[0.3em] font-medium">Details</h2>
                                 <ul class="text-[10px] space-y-3 uppercase tracking-[0.2em] text-black/60">
-                                    <li>100% Merino Wool</li>
-                                    <li>Dry Clean Only</li>
-                                    <li>Responsibly Sourced</li>
+                                    <li>Size: <?= esc($product['size']) ?></li>
+                                    <li>Stock: <?= esc($product['stock']) ?> pcs</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
+
+        <!-- Latest Products -->
         <section class="mt-64">
             <h2 class="text-2xl font-serif italic text-center mb-24 font-light">Latest Products</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-12">
+                <?php foreach ($latestProducts as $item) : ?>
                 <div class="group cursor-pointer space-y-6">
                     <div class="aspect-[3/4] overflow-hidden bg-gray-50">
-                        <img alt="Tapered Trousers" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMICpHKiVzsYbODs4nejWIvRDO8i0zBxs-sxYu4Ee28ohE6Qi6OYb-TOrh09nQ8Wh46ZjzKRR_DjKD3MQHG88IgXXcQTNntShw6KaeDXfOCr4PAfFA87mecqXetjZGeMdfqvMorcTWJXtBOdpv7a_p0Rc_Lg9BpWV3uvzL5sjLtef29FRJfI_MnZe2NiquIZvq-fEdc31xX24Dgoadz7bMfjaTZsJbYkFhJJLx-zmFSyROfilKVpUCB6FhKby8IfwZqxJ46QG4SH8" />
+                        <img 
+                            alt="<?= esc($item['name_product']) ?>" 
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                            src="<?= base_url('uploads/' . $item['image']) ?>" 
+                        />
                     </div>
                     <div class="flex justify-between text-[10px] uppercase tracking-[0.2em]">
-                        <span>Tapered Trousers</span>
-                        <span class="opacity-40">$320</span>
+                        <span><?= esc($item['name_product']) ?></span>
+                        <span class="opacity-40">Rp <?= number_format($item['price'], 0, ',', '.') ?></span>
                     </div>
                 </div>
-                <div class="group cursor-pointer space-y-6">
-                    <div class="aspect-[3/4] overflow-hidden bg-gray-50">
-                        <img alt="Silk Camisole" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJxs0gWQag59_oG9dHrjA9j2kwQSqtfoMplo2PPpGR1OW6T_v5cvjM_8nMC7nwSnudhuIW3f_lcxiObN3lH8fmpfK8PKYF6B4-RyT3_KNjGYtw6hPRuigDZVE0GbsHoSA-shmZ06i8hsUaFEiUg3YkZ_wU1lZtGIw3mOWGO14NqXwHxt1tmlMWr-u9kUCqt623wnsM2qNCvpsTz09gHb2QlImj95I9JfEQt4cv8rFLcP-HFsFoa2wzRgoW7bEV5QU6foLWV50OyYM" />
-                    </div>
-                    <div class="flex justify-between text-[10px] uppercase tracking-[0.2em]">
-                        <span>Silk Camisole</span>
-                        <span class="opacity-40">$185</span>
-                    </div>
-                </div>
-                <div class="group cursor-pointer space-y-6">
-                    <div class="aspect-[3/4] overflow-hidden bg-gray-50">
-                        <img alt="Square Toe Boots" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgAPQSL6U0p1bHo7SjQRIiZBWR_syRL2ph7Iw5Gwe-2Y6nAdju1RLjkVEove02ruiocZAZHMw_r9W66IFrK2qDZa3hHpcNNz96w5k02SzBtkv4lIY8PP6Y8h2gGNbkdMIC549LpBPjpycRVTV5kHc4FWvekABTpSoe-e-SrfDd___V5009g0dY6OvJpFRwJfn9Dg0IazTp0jHKc54zez_eFvqZJJ5CZLCgI6rHbzdCyHotKByAT_CUc1geivsRjAv-sQI3xF_N7Us" />
-                    </div>
-                    <div class="flex justify-between text-[10px] uppercase tracking-[0.2em]">
-                        <span>Square Toe Boots</span>
-                        <span class="opacity-40">$540</span>
-                    </div>
-                </div>
-                <div class="group cursor-pointer space-y-6">
-                    <div class="aspect-[3/4] overflow-hidden bg-gray-50">
-                        <img alt="Leather Tote" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALBhj9WG9eKVpliNUl7OmnZtKQovCN_qbyVctoMb_7UqdQXZJJkS11f8KN4kReqJBtv87vEBFTlKKuogi44Cf98wg4t1u3ihCFvy7ru4LDJIGe5JOJ24ah0Ft0fAoXCkjxgCy7ZVKeer-Ux9NSzIipO_6chFHU3J4snvTzftaBF2hDLu63FvlwMPUOSH7DlLhWB9mMf_MNUq4A2GflUzgj7dT4XNzYzXJ6pv6p0Ewr_PyX5aZWToyIt2sWhkKS549739fYebyO2Pk" />
-                    </div>
-                    <div class="flex justify-between text-[10px] uppercase tracking-[0.2em]">
-                        <span>Leather Tote</span>
-                        <span class="opacity-40">$680</span>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
         </section>
     </main>
+
     <footer class="border-t border-black py-24 mt-24">
         <div class="max-w-[1800px] mx-auto px-8 grid grid-cols-1 md:grid-cols-4 gap-16">
             <div class="space-y-6">
@@ -212,5 +225,4 @@
     </footer>
 
 </body>
-
 </html>
