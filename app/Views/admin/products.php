@@ -140,138 +140,40 @@
                     <table class="w-full text-left border-collapse">
                         <thead>
                             <tr class="border-b border-mono-black">
-                                <th class="py-5 w-16">
-                                    <input class="border-mono-border text-mono-black focus:ring-0 rounded-none" type="checkbox" />
-                                </th>
-                                <th class="py-5 text-[10px] font-bold uppercase tracking-widest text-gray-500">Thumbnail</th>
+                                <th class="py-5 text-[10px] font-bold uppercase tracking-widest text-gray-500">Product ID</th>
+                                <th class="py-5 text-[10px] font-bold uppercase tracking-widest text-gray-500">Category</th>
+                                <th class="py-5 text-[10px] font-bold uppercase tracking-widest text-gray-500">Image</th>
                                 <th class="py-5 text-[10px] font-bold uppercase tracking-widest text-gray-500">Product Name</th>
-                                <th class="py-5 text-[10px] font-bold uppercase tracking-widest text-gray-500">SKU</th>
-                                <th class="py-5 text-[10px] font-bold uppercase tracking-widest text-gray-500">Stock Level</th>
+                                <th class="py-5 text-[10px] font-bold uppercase tracking-widest text-gray-500">Stock</th>
                                 <th class="py-5 text-[10px] font-bold uppercase tracking-widest text-gray-500">Price</th>
+                                <th class="py-5 text-[10px] font-bold uppercase tracking-widest text-gray-500">Description</th>
+                                <th class="py-5 text-[10px] font-bold uppercase tracking-widest text-gray-500">Detail</th>
                                 <th class="py-5 text-[10px] font-bold uppercase tracking-widest text-gray-500 text-right">Actions</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-mono-border">
-                            <tr class="hover:bg-mono-gray/30 transition-colors group">
-                                <td class="py-6">
-                                    <input class="border-mono-border text-mono-black focus:ring-0 rounded-none" type="checkbox" />
-                                </td>
-                                <td class="py-6">
-                                    <div class="size-16 bg-mono-gray border border-mono-border overflow-hidden grayscale hover:grayscale-0 transition-all">
-                                        <img alt="Product" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEUnaB0tdLJQVj3tdjMIWZTqjjVdlkoeGRY2PoBwHHDbNU_cRd3p4dxQPz5shGDKfpJh2Hy8RjrR1phduMMKsFPzIszj7ZVNvmpJcJ9bwwwcypz5YRE00dzoE9XFiwT7jTPbG0Kg13Stnfso7v3mapBDO7cjdvLckQ4n9B1w6sN_g4felunELAbLAvu-Nt4SECffsLtHL2DthscX7_9VVFSF9uPof7T79_ocgL4DRla47fkjfdU6biQ75RCmd8PB7YmhgcD6CpJZ8" />
-                                    </div>
-                                </td>
-                                <td class="py-6">
-                                    <div class="flex flex-col">
-                                        <span class="text-xs font-bold uppercase tracking-wider">Minimalist Silk Coat</span>
-                                        <span class="text-[10px] text-gray-400 uppercase tracking-tighter mt-1">Outerwear / Black</span>
-                                    </div>
-                                </td>
-                                <td class="py-6 text-[11px] font-medium tracking-widest">MN-CT-001</td>
-                                <td class="py-6">
-                                    <div class="flex items-center gap-2">
-                                        <span class="size-1.5 bg-green-500 rounded-full"></span>
-                                        <span class="text-[11px] font-bold uppercase tracking-widest">42 In Stock</span>
-                                    </div>
-                                </td>
-                                <td class="py-6 text-sm font-medium tracking-tight">$1,250.00</td>
-                                <td class="py-6 text-right">
-                                    <div class="flex items-center justify-end gap-4">
-                                        <button class="material-symbols-outlined text-lg hover:text-gray-400 transition-colors">edit</button>
-                                        <button class="material-symbols-outlined text-lg hover:text-gray-400 transition-colors">more_vert</button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="hover:bg-mono-gray/30 transition-colors group">
-                                <td class="py-6">
-                                    <input class="border-mono-border text-mono-black focus:ring-0 rounded-none" type="checkbox" />
-                                </td>
-                                <td class="py-6">
-                                    <div class="size-16 bg-mono-gray border border-mono-border overflow-hidden grayscale hover:grayscale-0 transition-all">
-                                        <img alt="Product" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQUNJ0zhqsAixpKXoxKa1f80tOQ-_BPuXDUfXXMPp773VDO1_4JZ-BBWm3TytBM7Rc-SNy7PohUHUiW__a6llAZiDkcHexm15MrSUizGtYDLB6LEfaZqijn8QgSRIDIyq8h9aYc9hmTxZBXSY5hRlNMhVBY8OMi9kKfuo_HP_IgjXfQSa7PS4SjWtW5GZsuiW2yMyEopE69tBQoUK6eI5rDRwI9lBI4hwxbvmudqN36LH_DBBct-vsQ_DBdRD7T_RA0QNG00cV1Ts" />
-                                    </div>
-                                </td>
-                                <td class="py-6">
-                                    <div class="flex flex-col">
-                                        <span class="text-xs font-bold uppercase tracking-wider">Raw Hem Denim</span>
-                                        <span class="text-[10px] text-gray-400 uppercase tracking-tighter mt-1">Trousers / Indigo</span>
-                                    </div>
-                                </td>
-                                <td class="py-6 text-[11px] font-medium tracking-widest">MN-DN-012</td>
-                                <td class="py-6">
-                                    <div class="flex items-center gap-2">
-                                        <span class="size-1.5 bg-orange-400 rounded-full"></span>
-                                        <span class="text-[11px] font-bold uppercase tracking-widest">8 In Stock</span>
-                                    </div>
-                                </td>
-                                <td class="py-6 text-sm font-medium tracking-tight">$420.00</td>
-                                <td class="py-6 text-right">
-                                    <div class="flex items-center justify-end gap-4">
-                                        <button class="material-symbols-outlined text-lg hover:text-gray-400 transition-colors">edit</button>
-                                        <button class="material-symbols-outlined text-lg hover:text-gray-400 transition-colors">more_vert</button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="hover:bg-mono-gray/30 transition-colors group">
-                                <td class="py-6">
-                                    <input class="border-mono-border text-mono-black focus:ring-0 rounded-none" type="checkbox" />
-                                </td>
-                                <td class="py-6">
-                                    <div class="size-16 bg-mono-gray border border-mono-border overflow-hidden grayscale hover:grayscale-0 transition-all">
-                                        <img alt="Product" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCU-tihLEVHIAZFlOFdOzmHvgQHxI_1iObY-V3giVmxGfM-7fZk-PrOJQks3768C5zO9o-_aZ2yhzDX2HTjlgJZFQwYahZtvWmk7mDBVPx465YQ_vAOBKxsLUEzUFYUd3rn-CcntWryAnHw1bTNtPzUz5ghosTqCNFnRxECbj8RQ8GC0me2jMh-k0PJrhYrayJ1FDyWTN4KSfZlM3qxf7YKUIH9Thf9wQkBmxcyJewMFS9FGH9AUmMQa-UW-C9xsF0Z_rCncgIydl8" />
-                                    </div>
-                                </td>
-                                <td class="py-6">
-                                    <div class="flex flex-col">
-                                        <span class="text-xs font-bold uppercase tracking-wider">Architectural Blazer</span>
-                                        <span class="text-[10px] text-gray-400 uppercase tracking-tighter mt-1">Outerwear / Ash Grey</span>
-                                    </div>
-                                </td>
-                                <td class="py-6 text-[11px] font-medium tracking-widest">MN-BL-089</td>
-                                <td class="py-6">
-                                    <div class="flex items-center gap-2">
-                                        <span class="size-1.5 bg-mono-black rounded-full"></span>
-                                        <span class="text-[11px] font-bold uppercase tracking-widest">Out of Stock</span>
-                                    </div>
-                                </td>
-                                <td class="py-6 text-sm font-medium tracking-tight">$890.00</td>
-                                <td class="py-6 text-right">
-                                    <div class="flex items-center justify-end gap-4">
-                                        <button class="material-symbols-outlined text-lg hover:text-gray-400 transition-colors">edit</button>
-                                        <button class="material-symbols-outlined text-lg hover:text-gray-400 transition-colors">more_vert</button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="hover:bg-mono-gray/30 transition-colors group">
-                                <td class="py-6">
-                                    <input class="border-mono-border text-mono-black focus:ring-0 rounded-none" type="checkbox" />
-                                </td>
-                                <td class="py-6">
-                                    <div class="size-16 bg-mono-gray border border-mono-border overflow-hidden grayscale hover:grayscale-0 transition-all">
-                                        <img alt="Product" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhu4u4cg2XZ8JCWkjYt4A0JOBMoAkL0oaOGR8vYnlohHRxwXWcoP3uvqjYosxh7_pvGiv2mW0A11ry3s5tw73tQ0h76bccpu3PNZcgPIBbCpEZ1y7SaoFYGaup9Ku0zy8gfe4gaeMCHayi57IDa5rk3R7ZHdaJCuR1gNgb6CjMVBO4Dv-modQtuRxcIKRqV69aZ4c6S0wpCfUx830v03xpuVeFsd6_sVdyFZZK-isupRTJ2tiKRmmY4HkC2AwN5P2xtvAhvWW6G_U" />
-                                    </div>
-                                </td>
-                                <td class="py-6">
-                                    <div class="flex flex-col">
-                                        <span class="text-xs font-bold uppercase tracking-wider">Essential Crew Neck</span>
-                                        <span class="text-[10px] text-gray-400 uppercase tracking-tighter mt-1">Tops / White</span>
-                                    </div>
-                                </td>
-                                <td class="py-6 text-[11px] font-medium tracking-widest">MN-TS-044</td>
-                                <td class="py-6">
-                                    <div class="flex items-center gap-2">
-                                        <span class="size-1.5 bg-green-500 rounded-full"></span>
-                                        <span class="text-[11px] font-bold uppercase tracking-widest">128 In Stock</span>
-                                    </div>
-                                </td>
-                                <td class="py-6 text-sm font-medium tracking-tight">$180.00</td>
-                                <td class="py-6 text-right">
-                                    <div class="flex items-center justify-end gap-4">
-                                        <button class="material-symbols-outlined text-lg hover:text-gray-400 transition-colors">edit</button>
-                                        <button class="material-symbols-outlined text-lg hover:text-gray-400 transition-colors">more_vert</button>
-                                    </div>
-                                </td>
-                            </tr>
+                            <?php foreach ($products as $pr): ?>
+                                <tr class="hover:bg-mono-gray/30 transition-colors group">
+                                    <td class="py-6 text-sm font-medium tracking-tight"><?= $pr['product_id'] ?></td>
+                                    <td class="py-6 text-sm font-medium tracking-tight"><?= $pr['category_id'] ?></td>
+                                    <td class="py-6">
+                                        <div class="size-16 bg-mono-gray border border-mono-border overflow-hidden grayscale hover:grayscale-0 transition-all">
+                                            <img alt="Product" class="w-full h-full object-cover" src="/uploads/<?= $pr['image']; ?>" />
+                                        </div>
+                                    </td>
+                                    <td class="py-6 text-sm font-medium tracking-tight"><?= $pr['name_product'] ?></td>
+                                    <td class="py-6 text-sm font-medium tracking-tight"><?= $pr['stock'] ?></td>
+                                    <td class="py-6 text-sm font-medium tracking-tight"><?= $pr['price'] ?></td>
+                                    <td class="py-6 text-sm font-medium tracking-tight"><?= $pr['description'] ?></td>
+                                    <td class="py-6 text-sm font-medium tracking-tight"><?= $pr['details'] ?></td>
+                                    <td class="py-6 text-right">
+                                        <div class="flex items-center justify-end gap-4">
+                                            <button class="material-symbols-outlined text-lg hover:text-gray-400 transition-colors">edit</button>
+                                            <button class="material-symbols-outlined text-lg hover:text-gray-400 transition-colors">more_vert</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>

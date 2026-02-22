@@ -17,6 +17,7 @@ class ProductModel extends BaseIdModel
         'image',
         'name_product',
         'description',
+        'details',
         'price',
         'stock'
     ];
