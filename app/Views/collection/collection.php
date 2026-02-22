@@ -61,65 +61,44 @@
                 <div class="flex items-center">
                     <a class="filter-link" href="#">Filter</a>
                 </div>
+                <!-- PERUBAHAN 1: Showing count dinamis -->
                 <div class="text-[9px] uppercase tracking-[0.4em] text-black/40">
-                    Showing 12 Products
+                    Showing <?= count($products) ?> Products
                 </div>
             </div>
+            <!-- PERUBAHAN 2: Grid produk dinamis -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-24">
-                <div class="group cursor-pointer">
-                    <div class="product-image-container mb-6">
-                        <img alt="Monochrome product" class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAojNBPNDPF7dusolYOQrfS-e60JnHH01DO78ImYP8m1mXOl--WlMlQvll0_Eq2rtcuPUbLfiWWNqEDh6SgrkN-V6r8MxDmllszf7uFcFukhE1UEkstTvy20VG-IpTbPR3IerZ9Yqd8zSIx_j--wCwgTfYvqdM127j42h59soNbB9a5Wl2Q3DuBCx30lmq-isloIl4rrWScHtoxZ4PLt3D0eHhO-KVBxKxC5EmcrsvQJTVnnQ5D40kc6rL5jTtsU9_mj9f0nVm4H6w" />
+                <?php if (!empty($products)) : ?>
+                    <?php foreach ($products as $product) : ?>
+                        <a href="/detail/<?= esc($product['product_id']) ?>" class="group cursor-pointer">
+                            <div class="product-image-container mb-6">
+                                <?php if (!empty($product['image'])) : ?>
+                                    <img
+                                        alt="<?= esc($product['name_product']) ?>"
+                                        class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-105"
+                                        src="<?= base_url('uploads/products/' . esc($product['image'])) ?>"
+                                    />
+                                <?php else : ?>
+                                    <div class="w-full h-full bg-gray-100 flex items-center justify-center">
+                                        <span class="text-[9px] uppercase tracking-[0.3em] text-black/30">No Image</span>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                            <div class="flex justify-between items-baseline">
+                                <h3 class="text-[10px] uppercase tracking-[0.3em] font-light">
+                                    <?= esc($product['name_product']) ?>
+                                </h3>
+                                <span class="text-[10px] tracking-widest text-black/60">
+                                    <?= number_format($product['price'], 2) ?>
+                                </span>
+                            </div>
+                        </a>
+                    <?php endforeach; ?>
+                <?php else : ?>
+                    <div class="col-span-3 text-center py-24">
+                        <p class="text-[9px] uppercase tracking-[0.4em] text-black/40">No products found</p>
                     </div>
-                    <div class="flex justify-between items-baseline">
-                        <h3 class="text-[10px] uppercase tracking-[0.3em] font-light">Structure Blazer</h3>
-                        <span class="text-[10px] tracking-widest text-black/60">450.00</span>
-                    </div>
-                </div>
-                <div class="group cursor-pointer">
-                    <div class="product-image-container mb-6">
-                        <img alt="Monochrome product" class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkzuBeF0zkgoBc_WbfvuQ5z0RiomL5HerMlEZnCFskPbGS-yGCfEfJ3RfffsqhD261c3c20AMnsldsh9UcVeof98IkFMAc9nZHxeYe2INamv4CKfetmrFMYIAOxKHGPvGUI-VYCDo-R84qYz1ZMzsrnWC6FzlAxjpsKei5nmuBGBqc5kz7-prBk5Pcm3wbM0NsfEHz-uEaSjWZhbSSU3P5-Jvkxy9o9R8YVx4tlEHxr5spnWd59JDdlMBwSqsnqyKYuOKJBrUJ_bU" />
-                    </div>
-                    <div class="flex justify-between items-baseline">
-                        <h3 class="text-[10px] uppercase tracking-[0.3em] font-light">Ribbed Wool Knit</h3>
-                        <span class="text-[10px] tracking-widest text-black/60">280.00</span>
-                    </div>
-                </div>
-                <div class="group cursor-pointer">
-                    <div class="product-image-container mb-6">
-                        <img alt="Monochrome product" class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXqeGW8VuUbmosIbR27suDvmQVHk8IIqKtKNUEUd80X78JpEWto1R4LXxOpdLNGyYKfDkUO5qeNqDbx_oilm-rzWXF-UHTK_NdsFjtW-zwbBBsdXj3idqYxxZIMHcYwrFS9ORZgJXz5wl3QARbQbj6hw-EiUVfspkPufwKn8ZF0U8JvsJYTdvv3AUOlO7KwBFpQWg_ZhVCwXx_4iUGm2UEMtF5DINJklJliSkCdtC_v6pXFU1d3f2B2FyUEoVX3s0FGdZpSqIm8d8" />
-                    </div>
-                    <div class="flex justify-between items-baseline">
-                        <h3 class="text-[10px] uppercase tracking-[0.3em] font-light">Chelsea Boot 01</h3>
-                        <span class="text-[10px] tracking-widest text-black/60">620.00</span>
-                    </div>
-                </div>
-                <div class="group cursor-pointer">
-                    <div class="product-image-container mb-6">
-                        <img alt="Monochrome product" class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4jE2ZtEJvHM6daGDulhX77QD0cTay55GyOJcPtLgy1YDG1OReaLjRHqtIHtWS-VPfVbzXnqh4z0UYWbRHynHm8pWDEa18PNaAmEOyBiBE-lfTMcT3OVu-eqHryunGBa8j0kRkp1vEiiHaIdF1Gy0auQb5us2tG_L33tnXKF3xbBSs4bWZbtOKFIEaX736vwCpXNLAkmC0rNMg7VVzk8ybmZ8s3F154xqjiNucTx1X0dCM7c0IjzDVQ-YzKfgsz334LaPN-JzvwHo" />
-                    </div>
-                    <div class="flex justify-between items-baseline">
-                        <h3 class="text-[10px] uppercase tracking-[0.3em] font-light">Tapered Trouser</h3>
-                        <span class="text-[10px] tracking-widest text-black/60">340.00</span>
-                    </div>
-                </div>
-                <div class="group cursor-pointer">
-                    <div class="product-image-container mb-6">
-                        <img alt="Monochrome product" class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPdtQ4PiWMKeD8ewAg5ITYR43qe0aQmZYcEBUi5STh1LELWIG6GCrDPxF45dmKoG1ZE9_Zfaj42mCI8EOlzphJyOK33Tjyf4A6TOdFyfCIJmQdgLxBnU-A63P3ba5aoElP17NlS0OBuePWKloqislccYKAgHUbhz2NinFnkAUaJrciZPNQnpGbduHB2E16jC_q_pkIQklcs7FOsbk4rhriIYPGFf0krg0SoX1hw1sFZeEqroQ-PYMS6eHKB5sTWaMRmPNfYQQvwoE" />
-                    </div>
-                    <div class="flex justify-between items-baseline">
-                        <h3 class="text-[10px] uppercase tracking-[0.3em] font-light">Overcoat Noir</h3>
-                        <span class="text-[10px] tracking-widest text-black/60">890.00</span>
-                    </div>
-                </div>
-                <div class="group cursor-pointer">
-                    <div class="product-image-container mb-6">
-                        <img alt="Monochrome product" class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDo4XKaNNSKD8jO-H9f7ojFc9esUA0ncOpCBqZZxBvIwDF5FrqJcUUjXrrJLm1f0NIIB1DSBLgupkGNxZdeS_W-E1qwPn13ARd-4GmzkeV8gYk2Fa1P5o1cV7IWCFnHU7l40PZteyJpqWyiyKEUI3m9YO-VsJaH3YDMx_0BLbHnTWRdVLOEssXLViVted3ZMChUfYa52O6GGX5F7ymCWHidgdB9y2pYnJxJExpnjSGFoUnzVfkslDbqtWU5vdbRNoAtx1ASiuIrYXI" />
-                    </div>
-                    <div class="flex justify-between items-baseline">
-                        <h3 class="text-[10px] uppercase tracking-[0.3em] font-light">Textured Scarf</h3>
-                        <span class="text-[10px] tracking-widest text-black/60">120.00</span>
-                    </div>
-                </div>
+                <?php endif; ?>
             </div>
         </div>
     </main>
