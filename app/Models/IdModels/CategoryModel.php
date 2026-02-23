@@ -10,7 +10,8 @@ class CategoryModel extends BaseIdModel
     protected $primaryKey = 'category_id';
     protected $allowedFields = [
         'category_id',
-        'name_category'
+        'category_gender',
+        'category_type'
     ];
 
     protected $startNumber = 7000;

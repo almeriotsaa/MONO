@@ -19,7 +19,8 @@ class ProductModel extends BaseIdModel
         'description',
         'details',
         'price',
-        'stock'
+        'stock',
+        'size'
     ];
 
     protected $startNumber = 2000;
