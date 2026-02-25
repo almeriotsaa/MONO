@@ -36,6 +36,6 @@ class CategoriesSeeder extends Seeder
             ],
         ];
 
-        $this->db->table('products')->insertBatch($data);
+        $this->db->table('categories')->insertBatch($data);
     }
 }

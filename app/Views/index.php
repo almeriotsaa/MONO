@@ -42,13 +42,13 @@
     <nav class="fixed top-0 w-full z-50 bg-white/95 border-thin-b">
         <div class="max-w-[1800px] mx-auto px-12 h-16 flex items-center justify-between">
             <div class="flex items-center space-x-12">
+                <a class="nav-link" href="#">Home</a>
                 <a class="nav-link" href="<?= base_url('collection') ?>">Shop</a>
-                <a class="nav-link" href="#">Archive</a>
             </div>
             <div class="text-sm font-serif-luxury tracking-[0.3em] uppercase">MONO</div>
             <div class="flex items-center space-x-12">
-                <a class="nav-link" href="#">Search</a>
                 <a class="nav-link" href="#">Cart (0)</a>
+                <a class="nav-link" href="#">Login</a>
             </div>
         </div>
     </nav>
